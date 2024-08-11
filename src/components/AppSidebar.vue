@@ -18,7 +18,7 @@ const sidebar = useSidebarStore()
     :visible="sidebar.visible"
     @visible-change="(value) => sidebar.toggleVisible(value)"
   >
-    <CSidebarHeader class="border-bottom">
+    <CSidebarHeader>
       <RouterLink custom to="/" v-slot="{ href, navigate }">
         <CSidebarBrand v-bind="$attrs" as="a" :href="href" @click="navigate">
           <CIcon custom-class-name="sidebar-brand-full" :icon="logo" :height="32" />
@@ -28,8 +28,8 @@ const sidebar = useSidebarStore()
       <CCloseButton class="d-lg-none" dark @click="sidebar.toggleVisible()" />
     </CSidebarHeader>
     <AppSidebarNav />
-    <CSidebarFooter class="border-top d-none d-lg-flex">
+    <!-- <CSidebarFooter class="border-top d-none d-lg-flex">
       <CSidebarToggler @click="sidebar.toggleUnfoldable()" />
-    </CSidebarFooter>
+    </CSidebarFooter> -->
   </CSidebar>
 </template>
